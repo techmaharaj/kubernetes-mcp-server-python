@@ -130,26 +130,29 @@ curl https://your-ngrok-url.ngrok-free.app/sse
 
 #### 1. Access Claude Web Settings
 
-- Go to claude.ai
-- Click on your profile/settings (usually top-right)
-- Look for "Integrations" or "Custom Integrations"
-- Find "MCP Servers" or "Remote Servers" section
+- Navigate to claude.ai
+- Click on your profile and navigate to "Settings" -> "Integrations"
 
 #### 2. Add Your MCP Server
 
 - Click "Add Server" or "Add Integration"
 - Server Name: Homelab K8s (or any name you prefer)
 - Server URL: https://your-ngrok-url.ngrok-free.app/sse
-- Authentication: Leave blank (no API key needed for this demo)
 - Click "Save" or "Add"
 
-#### 3. Verify Connection
+![Setting up remote MCP on Claude web](</images/claude-integration.png>)
 
-Claude should show a green status or "Connected" indicator
-If there's an error, check the server logs and ngrok tunnel
+_Note: It might give a connection/authentication error since we have not configured any authentication._
 
-## 🎯 Usage Examples
-Basic Commands
-- "Claude, show me the pods in my cluster"
-- "Claude, get cluster information"
-- "Claude, what pods are running in the kube-system namespace?"
+## 🎯 Usage
+
+- Start a new chat
+- Click the "Search & Tools" button and you'll find the integration that you just added
+
+![Setting up remote MCP on Claude web](</images/claude-list-tools.png>)
+
+- Click on the "Homelab k8s" tool that you just added, it will list all the tools it supports
+
+- Ask it to "list all pods" and you should see that Claude uses the Homelab k8s MCP tool, which is running on our homelab system, and executes the respective `kubectl` command and returns the response. 
+
+![Setting up remote MCP on Claude web](</images/claude-chat.png>)
