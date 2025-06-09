@@ -1,8 +1,8 @@
 # 🚀 MCP Kubernetes Server
 
-A simple MCP (Model Context Protocol) server that lets Claude control your Kubernetes cluster remotely. This was used at KCD Bangalore 2025 talk - [Let's Understand MCP: The USB Type-C Plug For Your AI Apps](https://kcd-blr-2025.sessionize.com/session/882097).
+A simple MCP (Model Context Protocol) server that lets Claude control your Kubernetes cluster remotely. This was used at the KCD Bangalore 2025 talk - [Let's Understand MCP: The USB Type-C Plug For Your AI Apps](https://kcd-blr-2025.sessionize.com/session/882097). Here's the [presentation deck](https://www.canva.com/design/DAGpjWJbsL0/Dwq0tnU6ea1oDXu5YBiv-Q/view?utm_content=DAGpjWJbsL0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30aac90f2c) that I used for the talk.
 
-This is a very simple implementation of the MCP Python SDK to show how to create a MCP server and configure that on Claude web app as a remote MCP.
+This is a very simple implementation of the MCP Python SDK to show how to create a MCP server and configure that on the Claude web app as a remote MCP.
 
 ## ✨ Features
 
