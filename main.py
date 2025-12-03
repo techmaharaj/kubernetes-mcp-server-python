@@ -105,4 +105,10 @@ if __name__ == "__main__":
     print("2. Use ngrok HTTPS URL + /sse in Claude Web")
     print()
     
-    uvicorn.run(app, host=HOST, port=PORT)
+    uvicorn.run(
+        app, 
+        host=HOST, 
+        port=PORT,
+        forwarded_allow_ips="*",
+        proxy_headers=True
+    )
