@@ -76,7 +76,7 @@ You should see output like:
 ```
 
 For remote access:
-1. Start ngrok: ngrok http 8080
+1. Start ngrok: ngrok http 8080 --host-header="localhost:8080"
 2. Use ngrok HTTPS URL + /sse in Claude Web
 
 Test Local Connectivity
@@ -101,13 +101,13 @@ ngrok config add-authtoken YOUR_AUTH_TOKEN
 #### 2. Create Public Tunnel
 ```bash
 # In a new terminal (keep server running)
-ngrok http 8080
+ngrok http 8080 --host-header="localhost:8080"
 ```
 You'll see output like:
 ```bash
 ngrok                                                               
 
-Session Status                online
+Session Status               online
 Account                      your-email@example.com
 Version                      3.x.x
 Region                       United States (us)
@@ -117,13 +117,15 @@ Forwarding                   https://abc123.ngrok-free.app -> http://localhost:8
 
 Connections                  ttl     opn     rt1     rt5     p50     p90
                              0       0       0.00    0.00    0.00    0.00
-Important: Copy the HTTPS URL (e.g., https://abc123.ngrok-free.app)
 ```
+**Important**: Copy the HTTPS URL (e.g., https://abc123.ngrok-free.app)
+
+**Note**: The `--host-header="localhost:8080"` flag is required for MCP SDK versions >= 1.20 to pass host validation.
 
 #### 3. Test Remote Access
 ```bash
 # Test the public endpoint
-curl https://your-ngrok-url.ngrok-free.app/sse
+curl https://abc123.ngrok-free.app/sse
 ```
 
 ### 🔧 Claude Web Configuration
